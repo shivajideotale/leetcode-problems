@@ -1,13 +1,13 @@
 package com.leetcode.array;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
  * https://leetcode.com/problems/3sum/description/
+ * <p>
+ * Hint 1: So, we essentially need to find three numbers x, y, and z such that they add up to the given value. If we fix one of the numbers say x, we are left with the two-sum problem at hand!
  */
 public class Problem15_3Sum {
 
@@ -24,10 +24,9 @@ public class Problem15_3Sum {
              * If i is greater than ZERO then checking value of 'a' with previously added 'a' if it is same then skipping it.
              */
             if (i == 0 || i > 0 && a != nums[i - 1]) {
-                int target = 0 - (a);
+                int target = -(a);
                 twoSum(a, i + 1, nums.length - 1, nums, target);
             }
-            ;
         }
         return RESULT;
     }
@@ -52,7 +51,6 @@ public class Problem15_3Sum {
             }
         }
     }
-
 
     public static void main(String[] args) {
         System.out.println(threeSum(new int[]{-1, 0, 1, 2, -1, -4}));
